@@ -1,0 +1,19 @@
+{
+  "name": "typescript-practice",
+  "version": "1.0.0",
+  "description": "Practice project for typescript with nodejs express and mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelvinbush/rest-api-typescript-practice.git"
+  },
+  "author": "kelvinbush",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelvinbush/rest-api-typescript-practice/issues"
+  },
+  "homepage": "https://github.com/kelvinbush/rest-api-typescript-practice#readme"
+}
