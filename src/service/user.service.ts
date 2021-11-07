@@ -8,7 +8,7 @@ export async function createUser(
   >
 ) {
   try {
-    const user = await UserModel.create(input);
+    const user = (await UserModel.create(input)) as UserDocument;
     return omit(user.toJSON(), "password");
   } catch (e: any) {
     throw new Error(e);
