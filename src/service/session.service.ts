@@ -1,4 +1,5 @@
 import SessionModel, { SessionDocument } from "../models/session.model";
+import { FilterQuery } from "mongoose";
 
 export async function createSession(userId: string, userAgent: string) {
   const session: SessionDocument = await SessionModel.create({
@@ -6,4 +7,8 @@ export async function createSession(userId: string, userAgent: string) {
     userAgent,
   });
   return session.toJSON();
+}
+
+export async function findSessions(query: FilterQuery<SessionDocument>) {
+  return SessionModel.find(query).lean();
 }
