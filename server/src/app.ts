@@ -7,6 +7,7 @@ import routes from "./routes";
 import deserializeUser from "./middleware/deserializeUser";
 import { restResponseTimeHistogram, startMetricsServer } from "./utils/metrics";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 
 const port = config.get<number>("port");
 
@@ -18,6 +19,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(cookieParser());
 
 app.use(express.json());
 
