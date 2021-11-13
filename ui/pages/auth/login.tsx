@@ -31,7 +31,8 @@ function LoginPage() {
         try {
             await axios.post(
                 `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/api/sessions`,
-                values
+                values,
+                {withCredentials: true}
             );
             await router.push("/");
         } catch (e: any) {
