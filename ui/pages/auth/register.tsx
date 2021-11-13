@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { object, string } from "zod";
+import { object, string, TypeOf } from "zod";
 
 const createUserSchema = object({
   name: string().nonempty({
@@ -26,16 +26,18 @@ const createUserSchema = object({
   path: ["passwordConfirmation"],
 });
 
+type CreateUserInput = TypeOf<typeof createUserSchema>;
+
 function RegisterPage() {
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({
+  } = useForm<CreateUserInput>({
     resolver: zodResolver(createUserSchema),
   });
 
-  function onSubmit(values: any) {
+  function onSubmit(values: CreateUserInput) {
     console.log({ values });
   }
 
