@@ -19,5 +19,6 @@ export async function createUserHandler(
 }
 
 export function getCurrentUser(req: Request, res: Response) {
+  logger.info("getCurrentUser:", res.locals.user);
   return res.send(res.locals.user);
 }
