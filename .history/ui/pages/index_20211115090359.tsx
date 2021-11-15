@@ -3,7 +3,7 @@ import useSwr from "swr";
 import styles from "../styles/Home.module.css";
 import fetcher from "../utils/fetcher";
 import getGoogleOAuthURL from "../utils/getGoogleUrl";
-import logger from "../utils/logger";
+import logger from "../../logger";
 import {fire} from "../utils/firebase";
 
 interface User {

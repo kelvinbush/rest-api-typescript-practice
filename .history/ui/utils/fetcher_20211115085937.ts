@@ -1,4 +1,4 @@
-import logger from "./logger";
+import { logger } from "pino";
 import axios from "axios";
 
 const fetcher = async <T>(url: string, headers = {}): Promise<T | null> => {

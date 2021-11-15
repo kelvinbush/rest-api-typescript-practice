@@ -3,7 +3,7 @@ import useSwr from "swr";
 import styles from "../styles/Home.module.css";
 import fetcher from "../utils/fetcher";
 import getGoogleOAuthURL from "../utils/getGoogleUrl";
-import logger from "../utils/logger";
+import logger from "../../server/src/utils/logger";
 import {fire} from "../utils/firebase";
 
 interface User {
@@ -27,7 +27,7 @@ const Home: NextPage<{ fallbackData: User }> = ({ fallbackData }) => {
 	);
 
 	if (data) {
-		logger.info("DATA ",data);
+		logger.info("DATA",data);
 		return <div>Welcome! {data.name}</div>;
 	}
 
